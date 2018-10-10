@@ -1,0 +1,105 @@
+{template 'public_head'}
+		<!--中间内容开始-->
+		<section>
+		    <section class="hbox stretch">
+		    {template 'public_left'}
+		    <!--右边框架-->
+			  <section id="content">
+			    <section class="vbox">
+			        <section class="scrollable padder">
+                        <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
+                          <li><a href="index.html"><i class="fa fa-home"></i> 首页 </a></li>
+                          <li class="active">APP设置管理</li>
+                        </ul>
+                        <!--编辑内容-->
+                         <div class="panel panel-default">
+                           <div class="panel-heading">
+                              <h3 class="panel-title">
+                               APP设置管理
+                              </h3>
+                           </div>
+                           <div class="panel-body">
+																<ul class="nav nav-tabs" id="myTab">
+																		<li class="active" ><a href="#tab_basic">基础设置</a></li>
+																		<!--<li><a href="#tab_share">顶部设置</a></li>
+																		<li><a href="#tab_share1">其它图片</a></li>	-->							 
+																</ul>
+														<div class="tab-content">
+														<!--基础设置-->
+															<div class="tab-pane  active" id="tab_basic">
+																		<div class="panel-body">
+																			<form action="" method="post" class="form-horizontal form" enctype="multipart/form-data">
+																					<div class="form-group">
+																						<label for="inputEmail3" class="col-sm-2 control-label">appid</label>
+																						<div class="col-sm-10">
+																							<input type="text" class="form-control" name="appid" value="{$set['appid']}"  placeholder="appid">
+																						<span class="help-block" >开放平台移动应用获取</span>
+																						</div>
+																						
+																					</div>
+																					<div class="form-group">
+																							<label for="inputEmail3" class="col-sm-2 control-label">mchid商户号</label>
+																							<div class="col-sm-10">
+																								<input type="text" class="form-control" name="mchid" value="{$set['mchid']}"  placeholder="mchid">
+																							<span class="help-block" >开放平台移动应用对应APP开通的微信支付，和公众号的不一样</span>
+																							</div>																						
+																					</div>  
+																					<div class="form-group">
+																							<label for="inputEmail3" class="col-sm-2 control-label">服务器IP</label>
+																							<div class="col-sm-10">
+																								<input type="text" class="form-control" name="appzfip" value="{$set['appzfip']}"  placeholder="如:127.0.0.1">
+																							<span class="help-block" >服务器公网IP</span>
+																							</div>																						
+																					</div> 
+																					<div class="form-group">
+																						<div class="col-sm-offset-2 col-sm-10">
+																							 <input type="hidden" name="id" value="{$set['id']}" />
+																							 <input type="submit" name="submit" class="btn btn-default" value="提交"  class="btn btn-primary"/>
+																							 <input type="hidden" name="token" value="{$_W['token']}" />
+																						</div>
+																					</div>
+																				</form>
+																		</div>
+														  </div>
+														<!--基础设置结束-->
+														<!--<div class="tab-pane" id="tab_share">ddd</div>-->
+														</div> 
+														 
+														 
+                                
+                           </div>
+                        </div>
+
+
+<script>
+require(['jquery', 'util'], function($, u){
+$(function(){
+    u.editor($('.richtext')[0]);
+});
+});
+$(function () {
+    window.optionchanged = false;
+    $('#myTab a').click(function (e) {
+        e.preventDefault();//阻止a链接的跳转行为
+        $(this).tab('show');//显示当前选中的链接及关联的content
+    })
+});
+</script>
+  
+                        <!--编辑内容结束-->			            
+			        </section>
+			        {template 'public_bottom'}
+			    </section>
+			    <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a>
+			  </section>
+			  <aside class="bg-light lter b-l aside-md hide" id="notes">
+			       <div class="wrapper">不知道放什么</div>
+			  </aside>
+			<!--右边框架结束-->
+			</section>
+		  </section>
+		<!--中间内容结束-->
+	</section>
+
+</body>
+</html>
